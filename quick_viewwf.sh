@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ $# -lt 3 ]; then
-  echo "Usage: $0 <file_number> <event_number> <waveform_channel>"
+  echo "Usage: $0 <file_number> <event_number> <waveform_channel_0_to_3>"
   exit 2
 fi
 
@@ -30,4 +30,5 @@ echo "plot \"${dumpout}\" title \"file ${fileno} event ${eventno} channel ${chan
 gnuplot $gplotcmds
 
 rm -f $gplotcmds
+rm -f $dumpout
 
