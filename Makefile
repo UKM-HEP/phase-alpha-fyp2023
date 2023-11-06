@@ -1,4 +1,4 @@
-all : rc wfviewer_rc rc_textanalyser
+all : rc wfviewer_rc rc_textanalyser dumpwf_rc
 rc : rc_analyser
 
 rc_analyser : rc_analyser.cxx
@@ -10,5 +10,8 @@ wfviewer_rc: wfviewer_rc.cxx
 rc_textanalyser : rc_textanalyser.cxx
 	g++ `root-config --cflags --libs` -o rc_textanalyser rc_textanalyser.cxx -Wall -g 
 
+dumpwf_rc: dumpwf_rc.cxx
+	g++ `root-config --cflags --libs` -o dumpwf_rc dumpwf_rc.cxx -Wall -g
+
 clean:
-	rm -f rc_analyser wfviewer_rc rc_textanalyser
+	rm -f rc_analyser wfviewer_rc rc_textanalyser dumpwf_rc
